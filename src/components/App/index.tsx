@@ -3,6 +3,7 @@ import './App.css'
 
 import CommandBar from 'src/components/CommandBar'
 import GameInput from 'src/components/GameInput'
+import SaladBowl from 'src/components/SaladBowl'
 
 type Game = string
 type Entry = string
@@ -56,12 +57,7 @@ export default class App extends React.Component<AppProps, AppState> {
         </header>
         <div className="App-body">
           <GameInput updateGameEntries={this.updateGameEntries} />
-          <ul>
-            {this.state.entries &&
-              this.state.entries.map((entry, index) => (
-                <li key={`${entry}-${index}`}>{entry}</li>
-              ))}
-          </ul>
+          <SaladBowl entries={this.state.entries} />
         </div>
       </div>
     )
